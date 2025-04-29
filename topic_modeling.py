@@ -5,13 +5,13 @@ from bertopic.representation import KeyBERTInspired
 import os
 
 
-def train_topic_model(docs, embeddings=None):
+def train_topic_model(docs, api_key, embeddings=None):
     """
     Train a BERTopic model on the given documents.
     Optionally uses pre-computed document embeddings for faster training.
     Returns the trained BERTopic model and the list of topic assignments for each document.
     """
-    client = openai.OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    client = openai.OpenAI(api_key=api_key)
 
     representation_model = OpenAI(client, model="gpt-4.1-nano-2025-04-14", chat=True)
     topic_model = BERTopic(representation_model=representation_model, nr_topics=20)
