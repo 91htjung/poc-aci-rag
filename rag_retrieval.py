@@ -16,7 +16,7 @@ class DocumentIndex:
         self.metadata = []         # List of metadata dicts corresponding to indexed documents
         self.embeddings = None     # Numpy array of document embeddings
         self.dim = None            # Dimension of embeddings
-        self.client = openai.OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+        self.client = api_key
 
     def build_index(self, docs, metadata_list=None):
         """
