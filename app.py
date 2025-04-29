@@ -75,6 +75,7 @@ if process_clicked:
                 })
         # Build document index with embeddings
         doc_index = DocumentIndex()
+        doc_index.client = openai.OpenAI(api_key=OPENAI_API_KEY)
 #        try:
         doc_index.build_index(docs, metadata_list=metadata)
         #except Exception as e:
@@ -83,7 +84,7 @@ if process_clicked:
         # Perform topic modeling on the document chunks
         #try:
             # Use the same embeddings for topic modeling if available to avoid re-computation
-        topic_model, topics = train_topic_model(docs, embeddings=doc_index.embeddings)
+        topic_model, topics = train_topic_model(docs, api_key=OPENAI_API_KEY,embeddings=doc_index.embeddings)
         #except Exception as e:
         #    st.error(f"Error during topic modeling: {e}")
         #    st.stop()
@@ -108,6 +109,7 @@ if process_clicked:
 if load_clicked:
     st.write("Loading saved session...")
     doc_index = DocumentIndex()
+    doc_index.client = openai.OpenAI(api_key=OPENAI_API_KEY)
     try:
         doc_index.load("session_data")
     except Exception as e:
