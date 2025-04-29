@@ -52,6 +52,11 @@ def extract_year(filename):
     """
     years = re.findall(r'\d{4}', filename)
     years = [int(y) for y in years if 1900 <= int(y) <= 2100]
+
+    if not years:
+        years = filename[-4:]
+        years = [int(y) for y in years if 1900 <= int(y) <= 2100]
+        
     if not years:
         return None
     # If multiple year candidates found, return the first occurrence
