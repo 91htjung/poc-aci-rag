@@ -130,10 +130,10 @@ if load_clicked:
         # If transform is not available, assume topics were stored in metadata (if saved after processing)
         topics = [m.get("topic", -1) for m in doc_index.metadata]
     # Compute topics over time
-    try:
-        topics_over_time_df = topic_model.topics_over_time(docs, years, global_tuning=True, evolution_tuning=True)
-    except Exception:
-        topics_over_time_df = pd.DataFrame()
+    #try:
+    topics_over_time_df = topic_model.topics_over_time(docs, years, global_tuning=True, evolution_tuning=True)
+    #except Exception:
+    #    topics_over_time_df = pd.DataFrame()
     # Update session state
     st.session_state.doc_index = doc_index
     st.session_state.topic_model = topic_model
