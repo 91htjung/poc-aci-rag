@@ -11,8 +11,7 @@ from visualization import plot_topic_clusters, plot_documents_clusters, plot_top
 
 torch.classes.__path__ = []
 
-HYUNTAE_API_KEY = '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'
-openai.api_key = os.getenv("OPENAI_API_KEY", HYUNTAE_API_KEY)
+openai.api_key = os.environ["OPENAI_API_KEY"]
 
 # Streamlit App Configuration
 st.set_page_config(page_title="pdf Document Explorer", layout="wide")

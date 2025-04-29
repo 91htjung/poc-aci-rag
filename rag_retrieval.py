@@ -3,6 +3,7 @@ import numpy as np
 import math
 import re
 import openai
+import os
 
 class DocumentIndex:
     """
@@ -15,7 +16,7 @@ class DocumentIndex:
         self.metadata = []         # List of metadata dicts corresponding to indexed documents
         self.embeddings = None     # Numpy array of document embeddings
         self.dim = None            # Dimension of embeddings
-        self.client = openai.OpenAI(api_key='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')
+        self.client = openai.OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
     def build_index(self, docs, metadata_list=None):
         """
