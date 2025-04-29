@@ -50,7 +50,7 @@ def extract_year(filename):
     Extract a four-digit year from a filename, if present.
     Returns the year as an integer, or None if no year found.
     """
-    years = re.findall(r'\d{4}', filename)
+    years = re.findall(r'\b\d{4}\b', filename)
     years = [int(y) for y in years if 1900 <= int(y) <= 2100]
     if not years:
         return None
