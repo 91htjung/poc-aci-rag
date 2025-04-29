@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 from sklearn.manifold import TSNE
 from bertopic import BERTopic
-from umap import UMAP
 
 
 def plot_topic_clusters(topic_model):
