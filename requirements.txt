@@ -1,0 +1,10 @@
+openai==1.76.0
+pandas==2.2.3
+streamlit==1.44.1
+torch==2.7.0
+faiss-cpu==1.11.0
+bertopic==0.17.0
+pypdf2==3.0.1
+scikit-learn==1.6.1
+datamapplot==0.5.1
+umap==0.1.1
