@@ -93,7 +93,7 @@ if process_clicked:
         years = [m.get("year") for m in metadata]
         try:
             topics_over_time_df = topic_model.topics_over_time(docs, years, global_tuning=True, evolution_tuning=True)
-        #except Exception as e:
+        except Exception as e:
             # If topics_over_time fails (e.g., no year data), handle gracefully
             topics_over_time_df = pd.DataFrame()
         # Store results in session state for reuse
