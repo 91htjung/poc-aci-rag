@@ -12,7 +12,7 @@ from visualization import plot_topic_clusters, plot_documents_clusters, plot_top
 torch.classes.__path__ = []
 
 #openai.api_key = os.environ["OPENAI_API_KEY"]
-OPENAI_API_KEY = st.secrets["OpenAI_key"]
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 openai.api_key = OPENAI_API_KEY
 
 
