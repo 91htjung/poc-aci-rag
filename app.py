@@ -19,7 +19,7 @@ openai.api_key = OPENAI_API_KEY
 # Streamlit App Configuration
 st.set_page_config(page_title="pdf Document Explorer")
 
-st.title("ACI Policy Handbook - Enhanced RAG System")
+st.title("PDF Analyzer")
 st.write("Upload one or more PDF files, process them into a knowledge base, and explore topics or ask questions.")
 
 # File upload
