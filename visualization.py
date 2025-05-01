@@ -11,7 +11,7 @@ def plot_topic_clusters(topic_model):
 
 def plot_documents_clusters(topic_model, docs, embeddings):
     #reduced_embeddings = UMAP(n_neighbors=10, n_components=2, min_dist=0.0, metric='cosine').fit_transform(embeddings)
-    fig = topic_model.visualize_document_datamap(docs, embeddings=embeddings)
+    fig = topic_model.visualize_document_datamap(docs, embeddings=embeddings, width=600, height=600, datamap_kwds={label_over_points:True, dynamic_label_size:True})
     return fig
 
 def plot_topic_bar(topic_model):
