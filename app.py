@@ -7,7 +7,7 @@ import torch
 from utils import parse_pdf, chunk_text, extract_year
 from rag_retrieval import DocumentIndex
 from topic_modeling import train_topic_model, save_topic_model, load_topic_model
-from visualization import plot_topic_clusters, plot_documents_clusters, plot_topic_bar, plot_topics_over_time
+from visualization import plot_topic_clusters, plot_documents_clusters, plot_topics_over_time
 
 torch.classes.__path__ = []
 
